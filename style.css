@@ -6,8 +6,8 @@
 */
 
 :root {
-  --sand:      #f7efdf;   /* main background — warm cream */
-  --sand-deep: #ecdfc4;   /* slightly darker cream for panels */
+  --sand:      #ece0c7;   /* main background — warm cream */
+  --sand-deep: #dccdae;   /* slightly darker cream for panels */
   --ink:       #2a1e0d;   /* dark warm brown-black text */
   --muted:     #7a6a4e;   /* softer text */
   --orange:    #e6801a;   /* main accent — sunset orange */
