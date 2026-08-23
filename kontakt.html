@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Sunce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Sunce</div>
+    <nav class="main">
+      <a href="index.html">Naslovna</a>
+      <a href="usluge.html">Usluge</a>
+      <a href="o-nama.html">O nama</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+    </nav>
+    <div class="lang">
+      <a href="kontakt.html"  class="active" title="Hrvatski">🇭🇷</a>
+      <a href="en/contact.html"               title="English">🇬🇧</a>
+    </div>
+  </header>
+
+  <section class="page">
+    <h1>Kontakt</h1>
+    <p class="lead">Javite se za besplatnu i neobvezujuću ponudu.</p>
+
+    <p>
+      📞 <strong>Telefon:</strong> <a href="tel:+385911234567">+385 91 123 4567</a><br>
+      ✉️ <strong>Email:</strong> <a href="mailto:info@sunce-ciscenje.hr">info@sunce-ciscenje.hr</a>
+    </p>
+
+    <div class="callout">
+      Cijena se dogovara individualno, ovisno o veličini prostora i vrsti usluge.
+      Nakon što nas kontaktirate, dogovorit ćemo termin i besplatnu procjenu.
+    </div>
+
+    <h2>Pošaljite upit</h2>
+    <!--
+      Same note as before: this form's LOOK is HTML, but sending
+      needs a free handler (Web3Forms / Formspree). Wire that up
+      later — a couple of lines added to the <form> tag.
+    -->
+    <form>
+      <label>Ime i prezime
+        <input type="text" name="name" placeholder="Ivan Horvat">
+      </label>
+      <label>Telefon ili email
+        <input type="text" name="contact" placeholder="+385 91 ... ili email">
+      </label>
+      <label>Poruka
+        <textarea name="message" rows="4" placeholder="Opišite ukratko što trebate..."></textarea>
+      </label>
+      <button type="submit" class="button">Pošalji upit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Sunce · obrt za usluge čišćenja · <a href="index.html">Naslovna</a></p>
+  </footer>
+
+</body>
+</html>
