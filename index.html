@@ -1,65 +1,64 @@
 <!DOCTYPE html>
 <!--
-  Croatian home page (DEFAULT LANGUAGE).
-  sunce.hr/  automatically loads this file.
-  Notice the two flag buttons at the top-right:
-    🇭🇷 links to  index.html       (this page, so class="active")
-    🇬🇧 links to  en/index.html    (the English version of THIS page)
-  Every page's flags link to the equivalent page in the other language,
-  never back to the homepage — so language switches keep you in place.
+  English HOME page — lives at /en/index.html
+  Because this file is one folder deep:
+   - CSS link is  ../style.css   (up one, then style.css)
+   - The HR flag points to  ../index.html  (up one to Croatian home)
+   - The EN flag stays on this page  (active)
+  Internal English nav links are just services.html etc.
 -->
-<html lang="hr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunce — obrt za usluge čišćenja</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Sunce — Cleaning services</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
   <header>
     <div class="logo">Sunce</div>
     <nav class="main">
-      <a href="index.html" class="active">Naslovna</a>
-      <a href="usluge.html">Usluge</a>
-      <a href="o-nama.html">O nama</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="lang">
-      <a href="index.html"    class="active" title="Hrvatski">🇭🇷</a>
-      <a href="en/index.html"                title="English">🇬🇧</a>
+      <a href="../index.html"           title="Hrvatski">🇭🇷</a>
+      <a href="index.html" class="active" title="English">🇬🇧</a>
     </div>
   </header>
 
   <section class="hero">
     <h1>Sunce</h1>
-    <p class="tag">Obrt za usluge čišćenja</p>
-    <p>Čisto i pouzdano, već 7 godina. Čistimo domove i poslovne prostore diljem okolice — temeljito, na vrijeme, s pažnjom prema svakom detalju.</p>
-    <a href="kontakt.html" class="button">Zatražite ponudu</a>
-    <a href="usluge.html" class="button button-ghost">Pogledajte usluge</a>
+    <p class="tag">Cleaning services</p>
+    <p>Clean and reliable — for 7 years. We take care of homes and business spaces with care for every detail: thorough work, on time, no surprises.</p>
+    <a href="contact.html" class="button">Request a quote</a>
+    <a href="services.html" class="button button-ghost">See our services</a>
   </section>
 
   <section class="cards">
     <article class="card">
-      <h2>Domovi i stanovi</h2>
-      <p>Redovno i jednokratno čišćenje stambenih prostora.</p>
+      <h2>Homes &amp; apartments</h2>
+      <p>Regular or one-off cleaning of residential spaces.</p>
     </article>
     <article class="card">
-      <h2>Poslovni prostori</h2>
-      <p>Uredi, ordinacije, trgovine — čisto radno okruženje.</p>
+      <h2>Business spaces</h2>
+      <p>Offices, clinics, shops — a clean working environment.</p>
     </article>
     <article class="card">
-      <h2>Dubinsko čišćenje</h2>
-      <p>Temeljito čišćenje za posebne prilike.</p>
+      <h2>Deep cleaning</h2>
+      <p>Thorough cleaning for special occasions.</p>
     </article>
     <article class="card">
-      <h2>Nakon selidbe ili radova</h2>
-      <p>Da prostor bude spreman za useljenje ili predaju.</p>
+      <h2>After moving or renovation</h2>
+      <p>Ready to move in, or hand over to the owner.</p>
     </article>
   </section>
 
   <footer>
-    <p>Sunce · obrt za usluge čišćenja · <a href="kontakt.html">Kontakt</a></p>
+    <p>Sunce · Cleaning services · <a href="contact.html">Contact</a></p>
   </footer>
 
 </body>
