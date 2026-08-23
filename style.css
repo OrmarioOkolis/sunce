@@ -6,14 +6,14 @@
 */
 
 :root {
-  --sand:      #1a1712;   /* deep warm dark background */
-  --sand-deep: #2a2419;   /* slightly lighter panels/callouts */
-  --ink:       #f2ead9;   /* warm cream text (was dark) */
-  --muted:     #b3a688;   /* softer warm text */
-  --orange:    #f0942a;   /* accent — a touch brighter for dark bg */
-  --orange-hi: #ffb04a;
-  --line:      #3a3226;
-  --panel:     #241e15;   /* header/footer/cards — dark warm */
+  --sand:      #f7efdf;   /* main background — warm cream */
+  --sand-deep: #ecdfc4;   /* slightly darker cream for panels */
+  --ink:       #2a1e0d;   /* dark warm brown-black text */
+  --muted:     #7a6a4e;   /* softer text */
+  --orange:    #e6801a;   /* main accent — sunset orange */
+  --orange-hi: #d16a0e;   /* darker orange on hover */
+  --line:      #e0d3b3;   /* subtle borders */
+  --panel:     #ffffff;   /* card / white panel */
 }
 
 * { box-sizing: border-box; }
@@ -127,9 +127,9 @@ nav.main a.active { color: var(--ink); border-bottom: 2px solid var(--orange); }
 /* ---- Cards row (services) ---- */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  max-width: 960px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 1rem 1.5rem 3rem;
 }
@@ -137,10 +137,10 @@ nav.main a.active { color: var(--ink); border-bottom: 2px solid var(--orange); }
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 1.2rem;
+  padding: 1.6rem 1.5rem;
 }
-.card h2 { margin-top: 0; color: var(--orange-hi); font-size: 1.15rem; }
-.card p  { margin: .3rem 0 0; color: var(--muted); }
+.card h2 { margin-top: 0; color: var(--orange-hi); font-size: 1.3rem; }
+.card p  { margin: .4rem 0 0; color: var(--muted); font-size: 1.02rem; }
 
 /* ---- Generic inner content ---- */
 .page {
