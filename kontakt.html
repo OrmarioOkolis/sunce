@@ -39,7 +39,7 @@
     <h2>Pošaljite upit</h2>
     <!--
       Forma je povezana s Web3Forms — submissioni stižu na email upisan pri
-      generiranju access key-a. Zamijeni YOUR_ACCESS_KEY_HERE stvarnim ključem
+      generiranju access key-a. Zamijeni c8702510-0fef-4b90-87cd-246bcfd026de stvarnim ključem
       s web3forms.com (obavezno prvo potvrdi email da ključ radi).
     -->
     <form action="https://api.web3forms.com/submit" method="POST">
@@ -47,6 +47,8 @@
       <input type="hidden" name="access_key" value="c8702510-0fef-4b90-87cd-246bcfd026de">
       <!-- Subject u emailu koji ti stiže -->
       <input type="hidden" name="subject" value="Novi upit sa sunce-sajta">
+      <!-- Nakon uspješnog slanja, korisnik ide na hvala.html -->
+      <input type="hidden" name="redirect" value="hvala.html">
       <!-- Honeypot — anti-spam, botovi ga ispunjavaju, ljudi ne vide -->
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
