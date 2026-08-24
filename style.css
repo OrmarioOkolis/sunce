@@ -58,6 +58,7 @@ nav.main a {
   text-decoration: none;
   color: var(--muted);
   font-weight: 500;
+  transition: color .3s ease-out, border-color .3s ease-out;
 }
 nav.main a:hover { color: var(--orange-hi); }
 nav.main a.active { color: var(--ink); border-bottom: 2px solid var(--orange); }
@@ -76,7 +77,7 @@ nav.main a.active { color: var(--ink); border-bottom: 2px solid var(--orange); }
   border-radius: 3px;
   overflow: hidden;   /* clip the flag inside the rounded corners */
   opacity: 0.55;
-  transition: opacity .15s;
+  transition: opacity .3s ease-out, border-color .3s ease-out, box-shadow .3s ease-out;
 }
 .lang a:hover  { opacity: 1; }
 .lang a.active {
@@ -116,6 +117,7 @@ nav.main a.active { color: var(--ink); border-bottom: 2px solid var(--orange); }
   font: inherit;
   font-weight: 600;
   cursor: pointer;
+  transition: background .3s ease-out, color .3s ease-out, border-color .3s ease-out;
 }
 .button:hover { background: var(--orange-hi); }
 
@@ -140,9 +142,51 @@ nav.main a.active { color: var(--ink); border-bottom: 2px solid var(--orange); }
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 1.6rem 1.5rem;
+  transition: transform .3s ease-out, box-shadow .3s ease-out, border-color .3s ease-out;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(42, 30, 13, 0.08);
+  border-color: var(--sand-deep);
 }
 .card h2 { margin-top: 0; color: var(--orange-hi); font-size: 1.3rem; }
 .card p  { margin: .4rem 0 0; color: var(--muted); font-size: 1.02rem; }
+
+/* "Zatraži ponudu" link at the bottom of each service card.
+   Hidden by default; revealed on card hover (desktop).
+   On touch devices with no hover, we show it always via the media query below. */
+.card-cta {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--orange-hi);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .35s ease-out, transform .35s ease-out;
+  pointer-events: none;   /* prevents accidental clicks while invisible */
+}
+.card-cta::after { content: " →"; }
+
+/* Show it when the whole card (or the link itself) is hovered. */
+.card:hover .card-cta,
+.card-cta:hover,
+.card-cta:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.card-cta:hover { text-decoration: underline; }
+
+/* Touch devices (phones/tablets) have no real hover — always show the link. */
+@media (hover: none) {
+  .card-cta {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
 
 /* ---- Generic inner content ---- */
 .page {

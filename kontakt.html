@@ -31,7 +31,7 @@
     </div>
 
     <p>
-      📞 <strong>Telefon:</strong> <a href="tel:+385995490552">+385 99 549 0552</a><br>
+      📞 <strong>Telefon:</strong> <a href="tel:+385911234567">+385 91 123 4567</a><br>
       ✉️ <strong>Email:</strong> <a href="mailto:nikolissmilja@gmail.com?subject=Zahtjev%20za%20ponudu">nikolissmilja@gmail.com</a>
     </p>
 
@@ -72,6 +72,26 @@
   <footer>
     <p>Sunce · obrt za usluge čišćenja · <a href="index.html">Naslovna</a></p>
   </footer>
+
+  <!--
+    Kad korisnik dođe s kartice usluge (npr. kontakt.html?service=Domovi%20i%20stanovi),
+    ovaj mali skript pročita "service" iz URL-a i unaprijed popuni polje "Poruka"
+    s "Molba za ponudu — <usluga>. " (kursor ostaje na kraju za dopisivanje).
+    Ako URL nema ?service=... , ne događa se ništa i forma izgleda normalno.
+  -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get('service');
+      if (!service) return;
+      const textarea = document.querySelector('textarea[name="message"]');
+      if (!textarea) return;
+      textarea.value = 'Molba za ponudu — ' + service + '. ';
+      textarea.focus();
+      // pomakne kursor na kraj teksta
+      textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+    })();
+  </script>
 
 </body>
 </html>
