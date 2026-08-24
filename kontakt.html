@@ -27,7 +27,7 @@
     <p class="lead">Javite se za besplatnu i neobvezujuću ponudu.</p>
 
     <p>
-      📞 <strong>Telefon:</strong> <a href="tel:+385995490552">+385 99 549 0552</a><br>
+      📞 <strong>Telefon:</strong> <a href="tel:+385911234567">+385 91 123 4567</a><br>
       ✉️ <strong>Email:</strong> <a href="mailto:nikolissmilja@gmail.com?subject=Zahtjev%20za%20ponudu">nikolissmilja@gmail.com</a>
     </p>
 
@@ -38,19 +38,26 @@
 
     <h2>Pošaljite upit</h2>
     <!--
-      Same note as before: this form's LOOK is HTML, but sending
-      needs a free handler (Web3Forms / Formspree). Wire that up
-      later — a couple of lines added to the <form> tag.
+      Forma je povezana s Web3Forms — submissioni stižu na email upisan pri
+      generiranju access key-a. Zamijeni YOUR_ACCESS_KEY_HERE stvarnim ključem
+      s web3forms.com (obavezno prvo potvrdi email da ključ radi).
     -->
-    <form>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <!-- Web3Forms access key (obavezno) -->
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <!-- Subject u emailu koji ti stiže -->
+      <input type="hidden" name="subject" value="Novi upit sa sunce-sajta">
+      <!-- Honeypot — anti-spam, botovi ga ispunjavaju, ljudi ne vide -->
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
       <label>Ime i prezime
-        <input type="text" name="name" placeholder="Ivan Horvat">
+        <input type="text" name="name" placeholder="Ivan Horvat" required>
       </label>
       <label>Telefon ili email
-        <input type="text" name="contact" placeholder="+385 91 ... ili email">
+        <input type="text" name="contact" placeholder="+385 91 ... ili email" required>
       </label>
       <label>Poruka
-        <textarea name="message" rows="4" placeholder="Opišite ukratko što trebate..."></textarea>
+        <textarea name="message" rows="4" placeholder="Opišite ukratko što trebate..." required></textarea>
       </label>
       <button type="submit" class="button">Pošalji upit</button>
     </form>
