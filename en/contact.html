@@ -31,7 +31,7 @@
     </div>
 
     <p>
-      📞 <strong>Telefon:</strong> <a href="tel:+385995490552">+385 99 549 0552</a><br>
+      📞 <strong>Phone:</strong> <a href="tel:+385911234567">+385 91 123 4567</a><br>
       ✉️ <strong>Email:</strong> <a href="mailto:nikolissmilja@gmail.com?subject=Quote%20request">nikolissmilja@gmail.com</a>
     </p>
 
@@ -43,13 +43,12 @@
 
     <h2>Send an enquiry</h2>
     <!--
-      Form is wired to Web3Forms. Same access key as the Croatian page —
-      replace c8702510-0fef-4b90-87cd-246bcfd026de with the real key from web3forms.com.
+      Form is wired to Web3Forms. Submissions go to the email tied to the access key.
+      After successful send, the visitor is redirected to thanks.html.
     -->
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="c8702510-0fef-4b90-87cd-246bcfd026de">
       <input type="hidden" name="subject" value="New enquiry from Sunce website">
-      <!-- After successful send, user goes to thanks.html -->
       <input type="hidden" name="redirect" value="thanks.html">
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -69,6 +68,26 @@
   <footer>
     <p>Sunce · Cleaning services · <a href="index.html">Home</a></p>
   </footer>
+
+  <!--
+    When a visitor arrives from a service card (e.g. contact.html?service=Homes%20%26%20apartments),
+    this small script reads "service" from the URL and pre-fills the "Message" field
+    with "Quote request — <service>. " (cursor is placed at the end so they can keep typing).
+    If the URL has no ?service=... , nothing happens and the form looks normal.
+  -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get('service');
+      if (!service) return;
+      const textarea = document.querySelector('textarea[name="message"]');
+      if (!textarea) return;
+      textarea.value = 'Quote request — ' + service + '. ';
+      textarea.focus();
+      // move cursor to end
+      textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+    })();
+  </script>
 
 </body>
 </html>
