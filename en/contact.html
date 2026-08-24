@@ -27,7 +27,7 @@
     <p class="lead">Get in touch for a free, no-obligation quote.</p>
 
     <p>
-      📞 <strong>Phone:</strong> <a href="tel:+385995490552">+385 99 549 0552</a><br>
+      📞 <strong>Phone:</strong> <a href="tel:+385911234567">+385 91 123 4567</a><br>
       ✉️ <strong>Email:</strong> <a href="mailto:nikolissmilja@gmail.com?subject=Quote%20request">nikolissmilja@gmail.com</a>
     </p>
 
@@ -38,15 +38,23 @@
     </div>
 
     <h2>Send an enquiry</h2>
-    <form>
+    <!--
+      Form is wired to Web3Forms. Same access key as the Croatian page —
+      replace YOUR_ACCESS_KEY_HERE with the real key from web3forms.com.
+    -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="hidden" name="subject" value="New enquiry from Sunce website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
       <label>Full name
-        <input type="text" name="name" placeholder="John Smith">
+        <input type="text" name="name" placeholder="John Smith" required>
       </label>
       <label>Phone or email
-        <input type="text" name="contact" placeholder="+385 91 ... or email">
+        <input type="text" name="contact" placeholder="+385 91 ... or email" required>
       </label>
       <label>Message
-        <textarea name="message" rows="4" placeholder="Briefly describe what you need..."></textarea>
+        <textarea name="message" rows="4" placeholder="Briefly describe what you need..." required></textarea>
       </label>
       <button type="submit" class="button">Send enquiry</button>
     </form>
