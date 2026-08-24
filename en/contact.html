@@ -40,11 +40,13 @@
     <h2>Send an enquiry</h2>
     <!--
       Form is wired to Web3Forms. Same access key as the Croatian page —
-      replace YOUR_ACCESS_KEY_HERE with the real key from web3forms.com.
+      replace c8702510-0fef-4b90-87cd-246bcfd026de with the real key from web3forms.com.
     -->
     <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="c8702510-0fef-4b90-87cd-246bcfd026de">
       <input type="hidden" name="subject" value="New enquiry from Sunce website">
+      <!-- After successful send, user goes to thanks.html -->
+      <input type="hidden" name="redirect" value="thanks.html">
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
       <label>Full name
