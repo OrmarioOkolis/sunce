@@ -66,20 +66,19 @@
 
     <h2>Pošaljite upit</h2>
     <!--
-      Forma je povezana s Web3Forms — submissioni stižu na email upisan pri
-      generiranju access key-a. Redirect mora biti puna adresa (https://...),
-      inače Web3Forms ne zna kamo vratiti posjetitelja. Kad .hr domena
-      proradi, promijeni i nju.
+      Forma je povezana s Formspark (formspark.io) — podaci se čuvaju u EU
+      (AWS Irska), a upiti stižu na email postavljen u Formspark računu.
+      Polja koja počinju s "_" Formspark ne prikazuje u emailu.
+      _redirect mora biti puna adresa (https://...). Kad .hr domena proradi,
+      promijeni i nju.
     -->
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <!-- Web3Forms access key (obavezno) -->
-      <input type="hidden" name="access_key" value="c8702510-0fef-4b90-87cd-246bcfd026de">
-      <!-- Subject u emailu koji ti stiže -->
-      <input type="hidden" name="subject" value="Novi upit sa sunce-sajta">
+    <form action="https://submit-form.com/K2wH6BBwN" method="POST">
       <!-- Nakon uspješnog slanja, korisnik ide na hvala.html -->
-      <input type="hidden" name="redirect" value="https://ormariookolis.github.io/sunce/hvala.html">
+      <input type="hidden" name="_redirect" value="https://ormariookolis.github.io/sunce/hvala.html">
+      <!-- Bez ovoga Formspark dopisuje ime, kontakt i poruku u URL stranice zahvale -->
+      <input type="hidden" name="_append" value="false">
       <!-- Honeypot — anti-spam, botovi ga ispunjavaju, ljudi ne vide -->
-      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
 
       <label>Ime i prezime
         <input type="text" name="name" placeholder="Ivan Horvat" required>
