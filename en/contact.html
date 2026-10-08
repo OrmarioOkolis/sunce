@@ -20,13 +20,14 @@
   <meta property="og:image" content="https://ormariookolis.github.io/sunce/img/og-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Sunce — obrt za usluge čišćenja">
+  <meta property="og:image:alt" content="Sunce — Cleaning services">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact — Sunce">
   <meta name="twitter:description" content="Get in touch for a free, no-obligation quote. We operate in the Zagreb area.">
   <meta name="twitter:image" content="https://ormariookolis.github.io/sunce/img/og-preview.png">
   <!-- Standard meta description (for Google search results & other bots) -->
   <meta name="description" content="Get in touch for a free, no-obligation quote. We operate in the Zagreb area.">
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -66,14 +67,14 @@
 
     <h2>Send an enquiry</h2>
     <!--
-      Form is wired to Web3Forms. Submissions go to the email tied to the access key.
-      After successful send, the visitor is redirected to thanks.html.
+      Form is wired to Formspark (formspark.io) — data is stored in the EU (AWS Ireland).
+      After a successful send, the visitor is redirected to thanks.html.
+      _append=false stops Formspark adding the submitted fields to the redirect URL.
     -->
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="c8702510-0fef-4b90-87cd-246bcfd026de">
-      <input type="hidden" name="subject" value="New enquiry from Sunce website">
-      <input type="hidden" name="redirect" value="thanks.html">
-      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+    <form action="https://submit-form.com/K2wH6BBwN" method="POST">
+      <input type="hidden" name="_redirect" value="https://ormariookolis.github.io/sunce/en/thanks.html">
+      <input type="hidden" name="_append" value="false">
+      <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
 
       <label>Full name
         <input type="text" name="name" placeholder="John Smith" required>
@@ -85,11 +86,22 @@
         <textarea name="message" rows="4" placeholder="Briefly describe what you need..." required></textarea>
       </label>
       <button type="submit" class="button">Send enquiry</button>
+      <p class="form-note">We use the details you send only to reply and prepare a quote. See our <a href="privacy.html">Privacy policy</a>.</p>
     </form>
+
+    <h2>Complaints</h2>
+    <p>
+      You can send a written complaint by email to
+      <a href="mailto:nikolissmilja@gmail.com?subject=Complaint">nikolissmilja@gmail.com</a>
+      or by post to: Sunce, obrt za usluge čišćenja, Ulica hrvatskih branitelja 9, 10090 Zagreb, Croatia.
+      We will confirm receipt without delay and send a written reply within 15 days of receiving it.
+    </p>
   </section>
 
   <footer>
-    <p>Sunce · Cleaning services · <a href="index.html">Home</a></p>
+    <p>Sunce · Cleaning services · <a href="index.html">Home</a> · <a href="privacy.html">Privacy policy</a></p>
+    <p class="legal">Sunce, obrt za usluge čišćenja, vl. Ime Prezime, Zagreb · Ulica hrvatskih branitelja 9, 10090 Zagreb, Croatia<br>
+    Registered in the Croatian Crafts Register · MBO: 0000000000 · OIB: 0000000000 · Not registered for VAT</p>
   </footer>
 
   <!--

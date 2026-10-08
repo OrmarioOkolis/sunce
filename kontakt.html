@@ -27,6 +27,7 @@
   <meta name="twitter:image" content="https://ormariookolis.github.io/sunce/img/og-preview.png">
   <!-- Standard meta description (for Google search results & other bots) -->
   <meta name="description" content="Javite se za besplatnu i neobvezujuću ponudu. Radimo na području Zagreba i okolice.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -65,19 +66,19 @@
 
     <h2>Pošaljite upit</h2>
     <!--
-      Forma je povezana s Web3Forms — submissioni stižu na email upisan pri
-      generiranju access key-a. Zamijeni c8702510-0fef-4b90-87cd-246bcfd026de stvarnim ključem
-      s web3forms.com (obavezno prvo potvrdi email da ključ radi).
+      Forma je povezana s Formspark (formspark.io) — podaci se čuvaju u EU
+      (AWS Irska), a upiti stižu na email postavljen u Formspark računu.
+      Polja koja počinju s "_" Formspark ne prikazuje u emailu.
+      _redirect mora biti puna adresa (https://...). Kad .hr domena proradi,
+      promijeni i nju.
     -->
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <!-- Web3Forms access key (obavezno) -->
-      <input type="hidden" name="access_key" value="c8702510-0fef-4b90-87cd-246bcfd026de">
-      <!-- Subject u emailu koji ti stiže -->
-      <input type="hidden" name="subject" value="Novi upit sa sunce-sajta">
+    <form action="https://submit-form.com/K2wH6BBwN" method="POST">
       <!-- Nakon uspješnog slanja, korisnik ide na hvala.html -->
-      <input type="hidden" name="redirect" value="hvala.html">
+      <input type="hidden" name="_redirect" value="https://ormariookolis.github.io/sunce/hvala.html">
+      <!-- Bez ovoga Formspark dopisuje ime, kontakt i poruku u URL stranice zahvale -->
+      <input type="hidden" name="_append" value="false">
       <!-- Honeypot — anti-spam, botovi ga ispunjavaju, ljudi ne vide -->
-      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="checkbox" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
 
       <label>Ime i prezime
         <input type="text" name="name" placeholder="Ivan Horvat" required>
@@ -89,11 +90,23 @@
         <textarea name="message" rows="4" placeholder="Opišite ukratko što trebate..." required></textarea>
       </label>
       <button type="submit" class="button">Pošalji upit</button>
+      <p class="form-note">Podatke iz upita koristimo samo za odgovor i izradu ponude. Više u <a href="pravila-privatnosti.html">Pravilima privatnosti</a>.</p>
     </form>
+
+    <h2>Prigovori</h2>
+    <p>
+      Pisani prigovor možete poslati e-poštom na
+      <a href="mailto:nikolissmilja@gmail.com?subject=Prigovor">nikolissmilja@gmail.com</a>
+      ili poštom na adresu: Sunce, obrt za usluge čišćenja, Ulica hrvatskih branitelja 9, 10090 Zagreb.
+      Primitak prigovora potvrdit ćemo bez odgađanja, a pisani odgovor poslat ćemo
+      najkasnije u roku od 15 dana od dana zaprimanja.
+    </p>
   </section>
 
   <footer>
-    <p>Sunce · obrt za usluge čišćenja · <a href="index.html">Naslovna</a></p>
+    <p>Sunce · obrt za usluge čišćenja · <a href="index.html">Naslovna</a> · <a href="pravila-privatnosti.html">Pravila privatnosti</a></p>
+    <p class="legal">Sunce, obrt za usluge čišćenja, vl. Ime Prezime, Zagreb · Ulica hrvatskih branitelja 9, 10090 Zagreb<br>
+    Upisan u Obrtni registar · MBO: 0000000000 · OIB: 0000000000 · Obrt nije u sustavu PDV-a</p>
   </footer>
 
   <!--
